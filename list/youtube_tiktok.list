@@ -1,0 +1,40 @@
+# > YouTube
+USER-AGENT,*youtube*,YouTube&TikTok
+USER-AGENT,YouTube*,YouTube&TikTok
+USER-AGENT,com.google.ios.youtube*,YouTube&TikTok
+DOMAIN-KEYWORD,youtube,YouTube&TikTok
+DOMAIN,youtubei.googleapis.com,YouTube&TikTok
+DOMAIN,yt3.ggpht.com,YouTube&TikTok
+DOMAIN-SUFFIX,app-measurement.com,YouTube&TikTok
+DOMAIN-SUFFIX,googlevideo.com,YouTube&TikTok
+DOMAIN-SUFFIX,gvt2.com,YouTube&TikTok
+DOMAIN-SUFFIX,youtu.be,YouTube&TikTok
+DOMAIN-SUFFIX,youtube.com,YouTube&TikTok
+DOMAIN-SUFFIX,ytimg.com,YouTube&TikTok
+
+
+
+# > TikTok
+host-suffix, musical.ly,YouTube&TikTok
+host-suffix, tiktokv.com,YouTube&TikTok
+host-suffix, tiktokcdn.com,YouTube&TikTok
+host-suffix, -tiktokcdn-com,YouTube&TikTok
+host-suffix, muscdn.com,YouTube&TikTok
+user-agent, TikTok*,YouTube&TikTok
+DOMAIN-SUFFIX,byteoversea.com,YouTube&TikTok
+DOMAIN-SUFFIX,ibytedtos.com,YouTube&TikTok
+DOMAIN-SUFFIX,ipstatp.com,YouTube&TikTok
+DOMAIN-SUFFIX,muscdn.com,YouTube&TikTok
+DOMAIN-SUFFIX,tik-tokapi.com,YouTube&TikTok
+
+
+# > YouTubeMusic
+USER-AGENT,*YouTubeMusic*,YouTube&TikTok
+USER-AGENT,*com.google.ios.youtubemusic*,YouTube&TikTok
+USER-AGENT,YouTubeMusic*,YouTube&TikTok
+USER-AGENT,com.google.ios.youtubemusic*,YouTube&TikTok
+DOMAIN,music.youtube.com,YouTube&TikTok
+
+
+
+

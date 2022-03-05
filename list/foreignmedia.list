@@ -1,0 +1,114 @@
+# (proxy)
+# (Music)
+# > Spotify
+USER-AGENT,Spotify*,proxy
+DOMAIN-SUFFIX,pscdn.co,proxy
+DOMAIN-SUFFIX,scdn.co,proxy
+DOMAIN-SUFFIX,spotify.com,proxy
+DOMAIN-SUFFIX,spoti.fi,proxy
+DOMAIN-KEYWORD,spotify.com,proxy
+DOMAIN-KEYWORD,-spotify-com,proxy
+# (Video)
+# > AbemaTV
+USER-AGENT,AbemaTV*,proxy
+DOMAIN-SUFFIX,abema.io,proxy
+DOMAIN-SUFFIX,ameba.jp,proxy
+DOMAIN-SUFFIX,abema.tv,proxy
+DOMAIN-SUFFIX,hayabusa.io,proxy
+DOMAIN,abematv.akamaized.net,proxy
+DOMAIN,ds-linear-abematv.akamaized.net,proxy
+DOMAIN,ds-vod-abematv.akamaized.net,proxy
+DOMAIN,linear-abematv.akamaized.net,proxy
+# > Amazon Prime Video
+USER-AGENT,InstantVideo.US*,proxy
+USER-AGENT,Prime%20Video*,proxy
+DOMAIN-SUFFIX,aiv-cdn.net,proxy
+DOMAIN-SUFFIX,aiv-delivery.net,proxy
+DOMAIN-SUFFIX,amazonvideo.com,proxy
+DOMAIN-SUFFIX,primevideo.com,proxy
+DOMAIN,avodmp4s3ww-a.akamaihd.net,proxy
+DOMAIN,d25xi40x97liuc.cloudfront.net,proxy
+DOMAIN,dmqdd6hw24ucf.cloudfront.net,proxy
+DOMAIN,d22qjgkvxw22r6.cloudfront.net,proxy
+DOMAIN,d1v5ir2lpwr8os.cloudfront.net,proxy
+DOMAIN-KEYWORD,avoddashs,proxy
+# > BBC iPlayer
+USER-AGENT,BBCiPlayer*,proxy
+DOMAIN-SUFFIX,bbc.co.uk,proxy
+DOMAIN-SUFFIX,bbci.co.uk,proxy
+DOMAIN-KEYWORD,bbcfmt,proxy
+DOMAIN-KEYWORD,uk-live,proxy
+# > encoreTVB
+USER-AGENT,encoreTVB*,proxy
+DOMAIN-SUFFIX,encoretvb.com,proxy
+DOMAIN,edge.api.brightcove.com,proxy
+DOMAIN,bcbolt446c5271-a.akamaihd.net,proxy
+# > FOX NOW
+USER-AGENT,FOX%20NOW*,proxy
+DOMAIN-SUFFIX,fox.com,proxy
+DOMAIN-SUFFIX,foxdcg.com,proxy
+DOMAIN-SUFFIX,theplatform.com,proxy
+DOMAIN-SUFFIX,uplynk.com,proxy
+# > HBO NOW
+USER-AGENT,HBO%20NOW*,proxy
+DOMAIN-SUFFIX,hbo.com,proxy
+DOMAIN-SUFFIX,hbogo.com,proxy
+DOMAIN-SUFFIX,hbonow.com,proxy
+# > HBO GO HKG
+USER-AGENT,HBO%20GO%20PROD%20HKG*,proxy
+DOMAIN-SUFFIX,hbogoasia.com,proxy
+DOMAIN-SUFFIX,hbogoasia.hk,proxy
+DOMAIN,bcbolthboa-a.akamaihd.net,proxy
+DOMAIN,players.brightcove.net,proxy
+DOMAIN,s3-ap-southeast-1.amazonaws.com,proxy
+DOMAIN,dai3fd1oh325y.cloudfront.net,proxy
+DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,proxy
+DOMAIN,hboasia1-i.akamaihd.net,proxy
+DOMAIN,hboasia2-i.akamaihd.net,proxy
+DOMAIN,hboasia3-i.akamaihd.net,proxy
+DOMAIN,hboasia4-i.akamaihd.net,proxy
+DOMAIN,hboasia5-i.akamaihd.net,proxy
+DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,proxy
+# > Netflix
+USER-AGENT,Argo*,proxy
+DOMAIN-SUFFIX,netflix.com,proxy
+DOMAIN-SUFFIX,netflix.net,proxy
+DOMAIN-SUFFIX,nflxext.com,proxy
+DOMAIN-SUFFIX,nflximg.com,proxy
+DOMAIN-SUFFIX,nflximg.net,proxy
+DOMAIN-SUFFIX,nflxso.net,proxy
+DOMAIN-SUFFIX,nflxvideo.net,proxy
+DOMAIN-SUFFIX,netflixdnstest0.com,proxy
+DOMAIN-SUFFIX,netflixdnstest1.com,proxy
+DOMAIN-SUFFIX,netflixdnstest2.com,proxy
+DOMAIN-SUFFIX,netflixdnstest3.com,proxy
+DOMAIN-SUFFIX,netflixdnstest4.com,proxy
+DOMAIN-SUFFIX,netflixdnstest5.com,proxy
+DOMAIN-SUFFIX,netflixdnstest6.com,proxy
+DOMAIN-SUFFIX,netflixdnstest7.com,proxy
+DOMAIN-SUFFIX,netflixdnstest8.com,proxy
+DOMAIN-SUFFIX,netflixdnstest9.com,proxy
+IP-CIDR,23.246.0.0/18,proxy
+IP-CIDR,37.77.184.0/21,proxy
+IP-CIDR,45.57.0.0/17,proxy
+IP-CIDR,64.120.128.0/17,proxy
+IP-CIDR,66.197.128.0/17,proxy
+IP-CIDR,108.175.32.0/20,proxy
+IP-CIDR,192.173.64.0/18,proxy
+IP-CIDR,198.38.96.0/19,proxy
+IP-CIDR,198.45.48.0/20,proxy
+# > niconico
+USER-AGENT,Niconico*,proxy
+DOMAIN-SUFFIX,dmc.nico,proxy
+DOMAIN-SUFFIX,nicovideo.jp,proxy
+DOMAIN-SUFFIX,nimg.jp,proxy
+DOMAIN-SUFFIX,socdm.com,proxy
+# > Pornhub
+DOMAIN-SUFFIX,phncdn.com,proxy
+DOMAIN-SUFFIX,pornhub.com,proxy
+DOMAIN-SUFFIX,pornhubpremium.com,proxy
+# > Twitch
+DOMAIN-SUFFIX,twitch.tv,proxy
+DOMAIN-SUFFIX,twitchcdn.net,proxy
+DOMAIN-SUFFIX,ttvnw.net,proxy
+DOMAIN-SUFFIX,jtvnw.net,proxy

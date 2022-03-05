@@ -1,0 +1,31 @@
+# CDN 资源类 推荐选择直连（App 实体文件、Apple Music 音乐文件）
+# Apple Music
+host, aod.itunes.apple.com, apple
+host, api.smoot.apple.cn, apple
+host, mvod.itunes.apple.com, apple
+# > App Store
+user-agent, com.apple.appstored*, apple
+host-suffix, mzstatic.com, apple
+host, iosapps.itunes.apple.com, apple
+host, osxapps.itunes.apple.com, apple
+# > Update
+host, supportdownload.apple.com, apple
+host, appldnld.apple.com, apple
+host, swcdn.apple.com, apple
+host, apptrailers.itunes.apple.com, apple
+host, updates-http.cdn-apple.com, apple
+
+# API 服务类 推荐选择账号所在区（购买、发起下载、iCloud 同步（含上传和下载）、Siri）
+host-suffix, aaplimg.com, apple
+host-suffix, apple.co, apple
+host-suffix, apple.com, apple
+host-suffix, apple-cloudkit.com, apple
+host-suffix, appsto.re, apple
+host-suffix, cdn-apple.com, apple
+host-suffix, icloud.com, apple
+host-suffix, icloud-content.com, apple
+host-suffix, itunes.com, apple
+host-suffix, me.com, apple
+
+#捷径
+host, cvws.icloud-content.com, apple
