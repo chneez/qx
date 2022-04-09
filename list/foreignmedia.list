@@ -70,6 +70,7 @@ DOMAIN,hboasia4-i.akamaihd.net,proxy
 DOMAIN,hboasia5-i.akamaihd.net,proxy
 DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,proxy
 # > Netflix
+DOMAIN-KEYWORD,netflixdnstest,proxy
 USER-AGENT,Argo*,proxy
 DOMAIN-SUFFIX,netflix.com,proxy
 DOMAIN-SUFFIX,netflix.net,proxy
