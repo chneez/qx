@@ -15,17 +15,25 @@ DOMAIN-SUFFIX,ytimg.com,YouTube&TikTok
 
 
 # > TikTok
-host-suffix, musical.ly,YouTube&TikTok
-host-suffix, tiktokv.com,YouTube&TikTok
-host-suffix, tiktokcdn.com,YouTube&TikTok
-host-suffix, -tiktokcdn-com,YouTube&TikTok
-host-suffix, muscdn.com,YouTube&TikTok
-user-agent, TikTok*,YouTube&TikTok
-DOMAIN-SUFFIX,byteoversea.com,YouTube&TikTok
-DOMAIN-SUFFIX,ibytedtos.com,YouTube&TikTok
-DOMAIN-SUFFIX,ipstatp.com,YouTube&TikTok
-DOMAIN-SUFFIX,muscdn.com,YouTube&TikTok
-DOMAIN-SUFFIX,tik-tokapi.com,YouTube&TikTok
+
+HOST,p16-tiktokcdn-com.akamaized.net,YouTube&TikTok
+HOST-SUFFIX,byteoversea.com,YouTube&TikTok
+HOST-SUFFIX,ibytedtos.com,YouTube&TikTok
+HOST-SUFFIX,ibyteimg.com,YouTube&TikTok
+HOST-SUFFIX,ipstatp.com,YouTube&TikTok
+HOST-SUFFIX,muscdn.com,YouTube&TikTok
+HOST-SUFFIX,musical.ly,YouTube&TikTok
+HOST-SUFFIX,sgpstatp.com,YouTube&TikTok
+HOST-SUFFIX,snssdk.com,YouTube&TikTok
+HOST-SUFFIX,tik-tokapi.com,YouTube&TikTok
+HOST-SUFFIX,tiktok.com,YouTube&TikTok
+HOST-SUFFIX,tiktokcdn.com,YouTube&TikTok
+HOST-SUFFIX,tiktokv.co,,YouTube&TikTok
+HOST-KEYWORD,-tiktokcdn-com,YouTube&TikTok
+HOST-KEYWORD,musical.ly,YouTube&TikTok
+HOST-KEYWORD,tiktok,YouTube&TikTok
+HOST-KEYWORD,tiktokv,YouTube&TikTok
+USER-AGENT,TikTok*,YouTube&TikTok
 
 
 # > YouTubeMusic
