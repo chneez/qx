@@ -1,7 +1,3 @@
-
-
-DOMAIN-SUFFIX,pub1.emby.wtf,proxy
-
 # > 流媒体emby-nexitally服务器
 DOMAIN-SUFFIX,emby.nexitally.com,proxy
 
