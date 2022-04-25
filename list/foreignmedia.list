@@ -113,3 +113,27 @@ DOMAIN-SUFFIX,twitch.tv,proxy
 DOMAIN-SUFFIX,twitchcdn.net,proxy
 DOMAIN-SUFFIX,ttvnw.net,proxy
 DOMAIN-SUFFIX,jtvnw.net,proxy
+# 内容：DisneyPlus
+# 数量：22条
+USER-AGENT,Disney*,proxy
+USER-AGENT,Disney+*,proxy
+DOMAIN,cdn.registerdisney.go.com,proxy
+DOMAIN-SUFFIX,adobedtm.com,proxy
+DOMAIN-SUFFIX,bam.nr-data.net,proxy
+DOMAIN-SUFFIX,bamgrid.com,proxy
+DOMAIN-SUFFIX,braze.com,proxy
+DOMAIN-SUFFIX,cdn.optimizely.com,proxy
+DOMAIN-SUFFIX,cdn.registerdisney.go.com,proxy
+DOMAIN-SUFFIX,cws.conviva.com,proxy
+DOMAIN-SUFFIX,d9.flashtalking.com,proxy
+DOMAIN-SUFFIX,disney-plus.net,proxy
+DOMAIN-SUFFIX,disney-portal.my.onetrust.com,proxy
+DOMAIN-SUFFIX,disney.demdex.net,proxy
+DOMAIN-SUFFIX,disney.my.sentry.io,proxy
+DOMAIN-SUFFIX,disneyplus.bn5x.net,proxy
+DOMAIN-SUFFIX,disneyplus.com,proxy
+DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,proxy
+DOMAIN-SUFFIX,disneystreaming.com,proxy
+DOMAIN-SUFFIX,dssott.com,proxy
+DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,proxy
+DOMAIN-SUFFIX,js-agent.newrelic.com,proxy
