@@ -1,2 +1,3 @@
-DOMAIN-SUFFIX,v2ex.com,TG
-DOMAIN-SUFFIX,api-drive.mypikpak.om,TG
+DOMAIN-SUFFIX,v2ex.com,proxy
+DOMAIN-SUFFIX,api-drive.mypikpak.com,proxy
+DOMAIN-SUFFIX,api.opensea.io,proxy
