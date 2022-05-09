@@ -90,7 +90,7 @@ http://112.25.47.24/gitv_live/G_HUBEI-HD-265-8M/G_HUBEI-HD-265-8M.m3u8?p=GITV&ar
 http://112.25.47.24/gitv_live/G_LIAONING-HD-265-8M/G_LIAONING-HD-265-8M.m3u8?p=GITV&area=JS_CMCC_CP
 #http://112.25.47.35/gitv_live/G_LIAONING-HD-265-5M/G_LIAONING-HD-265-5M.m3u8?p=GITV&area=JS_CMCC_CP
 #EXTINF:-1 tvg-id="40" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/chongqing.png" group-title="卫视", 重庆卫视
-http://223.110.235.8/ott.js.chinamobile.com/PLTV/3/224/3221228133/index.m3u8
+http://117.169.120.132:8080/live/chongqingstv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="1976" tvg-name="全纪实" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/quanjishi.png" group-title="卫视",上视全纪实HD
 http://112.25.47.24/gitv_live/G_QUANJISHI/G_QUANJISHI.m3u8
