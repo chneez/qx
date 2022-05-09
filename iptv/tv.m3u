@@ -1,8 +1,5 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2019/10/8/1570468475876_655.png" group-title="中国", 央视新闻·正直播
-https://live-play.cctvnews.cctv.com/cctv/merge8.m3u8
-#EXTINF:-1 tvg-id="106" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="中国",CCTV-4K
-https://p.ggiptv.com/v/4k.m3u8
+
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://n.ysyz.top:99/buyaolian/cctv1.png" group-title="中国",CCTV-1
 http://112.25.47.24/gitv_live/G_CCTV-1-HD-265-8M/G_CCTV-1-HD-265-8M.m3u8?p=GITV&area=JS_CMCC_CP
 #http://112.25.47.35/gitv_live/G_CCTV-1-HD-265-5M/G_CCTV-1-HD-265-5M.m3u8?p=GITV&area=JS_CMCC_CP
@@ -49,7 +46,10 @@ http://112.25.47.24/gitv_live/G_CCTV-16-CQ/G_CCTV-16-CQ.m3u8
 http://112.25.47.24/gitv_live/G_CCTV-17-HD/G_CCTV-17-HD.m3u8
 #EXTINF:-1 tvg-id="20" tvg-name="CGTN" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png" group-title="中国",CGTN
 http://112.25.47.24/gitv_live/G_CCTV-NEWS/G_CCTV-NEWS.m3u8
-
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2019/10/8/1570468475876_655.png" group-title="中国", 央视新闻·正直播
+https://live-play.cctvnews.cctv.com/cctv/merge8.m3u8
+#EXTINF:-1 tvg-id="106" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="中国",CCTV-4K
+https://p.ggiptv.com/v/4k.m3u8
 
 
 #EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="http://n.ysyz.top:99/buyaolian/hunan.png" group-title="卫视",湖南卫视
@@ -168,7 +168,6 @@ http://ye23.win/iptv/sztv.php?id=6
 #EXTINF:-1 tvg-id="深圳少儿" tvg-name="深圳少儿" tvg-logo="https://www.hualigs.cn/image/61dd583a6b7c8.jpg" group-title="本地",深圳少儿
 http://ye23.win/iptv/sztv.php?id=7
 #http://183.11.239.32:808/hls/106/index.m3u8
-
 
 
 #EXTINF:-1 tvg-id="广西·南宁新闻" tvg-name="广西·南宁新闻" tvg-logo="https://www.hualigs.cn/image/61e13d4e0ac1b.jpg" group-title="本地",广西·南宁新闻
