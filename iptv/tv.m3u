@@ -353,3 +353,9 @@ https://jmstv.52sf.ga/hls/earth.m3u8
 https://jmstv.52sf.ga/hls/tvbs.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="特区",星空卫视
 https://jmstv.52sf.ga/hls/startv.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",周淑怡
+https://live.52sf.ga/douyu/22222
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",吃鸡
+https://live.52sf.ga/douyu/952595
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",女流
+https://live.52sf.ga/douyu/156277
