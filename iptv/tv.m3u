@@ -1,11 +1,11 @@
 #EXTM3U
 
 #EXTM3U
-#EXTINF:-1 tvg-id="106" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="央视",CCTV-4K超高清
+#EXTINF:-1 tvg-id="106" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="央视",CCTV-4K
 https://jmstv.52sf.ga/hls/cctv4k.m3u8
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视",CCTV-1高清
 https://jmstv.52sf.ga/hls/cctv1hd.m3u8
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视",CCTV-1港澳
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视",CCTV-1HK
 https://jmstv.52sf.ga/hls/cctv1hdhk.m3u8
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视",CCTV-2高清
 https://jmstv.52sf.ga/hls/cctv2hd.m3u8
@@ -353,9 +353,3 @@ https://jmstv.52sf.ga/hls/earth.m3u8
 https://jmstv.52sf.ga/hls/tvbs.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="特区",星空卫视
 https://jmstv.52sf.ga/hls/startv.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",周淑怡
-https://live.52sf.ga/douyu/22222
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",吃鸡
-https://live.52sf.ga/douyu/952595
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="直播",女流
-https://live.52sf.ga/douyu/156277
