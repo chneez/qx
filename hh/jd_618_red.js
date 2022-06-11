@@ -4,9 +4,9 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message = '';
-$.shareCode = 'VtPgX';//助力邀请码
-$.hbCode = 'ldCx1ku';//红包码
-let unionId = 1002115949; // 联盟id
+$.shareCode = 'VtPgX';
+$.hbCode = 'ldCx1ku';
+let unionId = 1002115949; 
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
