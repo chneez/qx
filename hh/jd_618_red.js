@@ -1,17 +1,12 @@
-/*
-京东618-京享红包，每日可中奖3次，最高19618元！
-环境变量：hbCode、shareCode
-https://u.jd.com/JC95RNG
-0 0,20 * * * jd_618_red.js
-*/
+
 const $ = new Env('京东618-京享红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message = '';
-$.shareCode = '9eIap';//助力邀请码
-$.hbCode = 'JCUl71W';//红包码
-let unionId = 2029434642; // 联盟id
+$.shareCode = 'VtPgX';//助力邀请码
+$.hbCode = 'ldCx1ku';//红包码
+let unionId = 1002115949; // 联盟id
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
