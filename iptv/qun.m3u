@@ -1,48 +1,4 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁新闻综合频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.241:4056/PLTV/88888888/224/
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁都市频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.139:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁影视频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.140:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁公共频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.141:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",防城港新闻
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.151:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",百色综合频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.150:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",桂林新闻综合
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.135:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",北海新闻综合
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.136:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",梧州新闻频道
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.244:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",贺州新闻综合
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.137:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",玉林新闻综合
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.138:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",百色综合标清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.149:4056
-#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangxi.png" group-title="卫视",广西卫视高清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.107:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西新闻高清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.248:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西综艺旅游高清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.214:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西都市高清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.247:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西影视高清
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.250:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西国际
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.8:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西乐思购
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.9:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西移动电视
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.10:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",聚鲨环球精选
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.98:4056
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",央广购物
-http://mrcat.myqnapcloud.com:4022/udp/239.81.0.131:4056
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视",CCTV-1综合高清
 http://mrcat.myqnapcloud.com:4022/udp/239.81.0.102:4056
 #EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视",CCTV-2财经高清
@@ -205,6 +161,50 @@ http://mrcat.myqnapcloud.com:4022/udp/239.81.0.235:4056
 http://mrcat.myqnapcloud.com:4022/udp/239.81.0.236:4056
 #EXTINF:-1 tvg-id="1306" tvg-name="网络棋牌" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/wangluoqipai.png" group-title="辽宁",网络棋牌
 http://mrcat.myqnapcloud.com:4022/udp/239.81.0.237:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁新闻综合频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.241:4056/PLTV/88888888/224/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁都市频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.139:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁影视频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.140:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",南宁公共频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.141:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",防城港新闻
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.151:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",百色综合频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.150:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",桂林新闻综合
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.135:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",北海新闻综合
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.136:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",梧州新闻频道
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.244:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",贺州新闻综合
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.137:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",玉林新闻综合
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.138:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",百色综合标清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.149:4056
+#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangxi.png" group-title="卫视",广西卫视高清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.107:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西新闻高清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.248:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西综艺旅游高清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.214:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西都市高清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.247:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西影视高清
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.250:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西国际
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.8:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西乐思购
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.9:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西移动电视
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.10:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",聚鲨环球精选
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.98:4056
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",央广购物
+http://mrcat.myqnapcloud.com:4022/udp/239.81.0.131:4056
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西IPTV1
 http://mrcat.myqnapcloud.com:4022/udp/239.81.0.201:4056
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广西IPTV2
