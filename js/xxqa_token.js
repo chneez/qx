@@ -10,7 +10,7 @@ const VAL_body = JSON.parse($request.body)
 
   //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
 
-$.setjson(VAL_body, 'xxqa_token')
+$.setjson(VAL_body.token, 'xxqa_token')
 
 
   $.subt = '获取会话: 成功!'
