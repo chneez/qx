@@ -1,6 +1,7 @@
 /*
 **/
-        const cookie = $request.headers["Cookie"];
+const $ = new API("xxqa", true);
+const cookie = $request.headers["Cookie"];
 
 $.write(cookie, "xxqa_cookie");
 
