@@ -2,8 +2,8 @@
 **/
 const $ = new API("xxqa", true);
 const cookie = $request.headers["Cookie"];
-
-$.write(cookie, "xxqa_cookie");
+$.log(cookie);
+//$.write(cookie, "xxqa_cookie");
 
 $done();
 
