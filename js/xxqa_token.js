@@ -6,7 +6,7 @@ const $ = new Env('xxqatoken')
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取会话: 开始!`, '')
   
-const VAL_body = JSON.parse($request.body)
+const VAL_body = JSON.parse($response.body)
 
   //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
 
