@@ -3,8 +3,8 @@
 **/
 const $ = new API("xxqa", true);
 var body = JSON.parse($response.body);
-$.log(body.token);
-//$.write(body.token, "xxqa_token");
+//$.log(body.token);
+$.write(body.token, "xxqa_token");
 
 $done();
 
