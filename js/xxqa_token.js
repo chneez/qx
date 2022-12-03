@@ -1,8 +1,9 @@
 /*
 
 **/
-var body = JSON.parse($response.body);
-$.write(body.token, "xxqa_token");
+var vhh = JSON.parse($response.body);
+var token = vhh.token
+$.write(token, "xxqa_token");
 
 $done();
 
