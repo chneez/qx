@@ -1,9 +1,9 @@
-DOMAIN-KEYWORD,TG,TG
+DOMAIN-KEYWORD,telegram,TG
 DOMAIN-SUFFIX,t.me,TG
 DOMAIN-SUFFIX,tdesktop.com,TG
 DOMAIN-SUFFIX,telegra.ph,TG
-DOMAIN-SUFFIX,TG.me,TG
-DOMAIN-SUFFIX,TG.org,TG
+DOMAIN-SUFFIX,telegram.me,TG
+DOMAIN-SUFFIX,telegram.org,TG
 DOMAIN-SUFFIX,telesco.pe,TG
 HOST-SUFFIX,comments.app,TG
 HOST-SUFFIX,contest.com,TG
@@ -12,10 +12,10 @@ HOST-SUFFIX,mbrx.app,TG
 HOST-SUFFIX,quiz.directory,TG
 HOST-SUFFIX,stel.com,TG
 HOST-SUFFIX,telega.one,TG
-HOST-SUFFIX,TG-cdn.org,TG
-HOST-SUFFIX,TG.dog,TG
-HOST-SUFFIX,TG.space,TG
-HOST-SUFFIX,TGdownload.com,TG
+HOST-SUFFIX,telegram-cdn.org,TG
+HOST-SUFFIX,telegram.dog,TG
+HOST-SUFFIX,telegram.space,TG
+HOST-SUFFIX,telegramdownload.com,TG
 HOST-SUFFIX,tg.dev,TG
 HOST-SUFFIX,tx.me,TG
 HOST-SUFFIX,usercontent.dev,TG
