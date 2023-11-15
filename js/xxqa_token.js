@@ -6,11 +6,13 @@ const $ = new Env('xxqatoken')
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取会话: 开始!`, '')
   
-const VAL_body = JSON.parse($response.body)
+
+
+const token = $request.headers["access-token"];
 
   //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
 
-$.setjson(VAL_body.access-token, 'xxqa_token')
+$.setjson(token, 'xxqa_token')
 
 
   $.subt = '获取会话: 成功!'
@@ -27,6 +29,10 @@ $.setjson(VAL_body.access-token, 'xxqa_token')
 
 
 
+
+
+
+ 
 
 
 
