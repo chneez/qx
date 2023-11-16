@@ -8,3 +8,5 @@ DOMAIN-SUFFIX,wikimedia.org,proxy
 DOMAIN-SUFFIX,afreecatv.com,proxy
 DOMAIN-SUFFIX,openai.com,proxy
 DOMAIN-SUFFIX,imgloc.com,proxy
+DOMAIN-SUFFIX,oaistatic.com,proxy
+DOMAIN-SUFFIX,oaiusercontent.com,proxy
