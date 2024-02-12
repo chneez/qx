@@ -9,7 +9,7 @@ const $ = new Env('mmcdtoken')
 var body = JSON.parse($response.body);
 const token = body.data.token;
 
-$.log(token);
+$.log($response.body);
 
 $.setjson(token, 'mmcd_token')
 
