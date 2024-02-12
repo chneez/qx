@@ -1,11 +1,11 @@
-const $ = new Env('sycauth')
+const $ = new Env('woddev_auth')
 
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取会话: 开始!`, '')
   
 
 
-const auth = $request.headers["Authorization"];
+const auth = $request.headers;
 
   //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
 
