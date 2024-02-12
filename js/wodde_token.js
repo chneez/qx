@@ -1,4 +1,4 @@
-const $ = new Env('woddev_token')
+const $ = new Env('woddevtoken')
 
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取会话: 开始!`, '')
