@@ -5,7 +5,9 @@ const $ = new Env('mmcdtoken')
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取token: 开始!`, '')
   
-const token = $response.body["data.token"];
+
+var body = $response.body
+const token = body.data.token;
 
 $.log(token);
 
