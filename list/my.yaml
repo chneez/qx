@@ -11,5 +11,7 @@ payload:
   - DOMAIN-SUFFIX,dockerhub.com
   - DOMAIN-SUFFIX,v2ex.com
   - DOMAIN-SUFFIX,ddrk.me
+  - DOMAIN-SUFFIX,1.1.1.1
+  - DOMAIN-SUFFIX,one.one.one.one
 
 
