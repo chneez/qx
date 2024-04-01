@@ -13,5 +13,6 @@ payload:
   - DOMAIN-SUFFIX,ddrk.me
   - DOMAIN-SUFFIX,1.1.1.1
   - DOMAIN-SUFFIX,one.one.one.one
+  - DOMAIN-SUFFIX,nssurge.com
 
 
