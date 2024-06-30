@@ -31,10 +31,12 @@ http://192.168.60.1:7088/udp/239.81.0.206:4056
 http://192.168.60.1:7088/udp/239.81.0.120:4056
 #EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png" group-title="央视",CCTV15
 http://192.168.60.1:7088/udp/239.81.0.230:4056
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV16" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV156.png" group-title="央视",CCTV16
+http://192.168.60.1:7088/udp/239.81.0.142:4056
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV16" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV156.png" group-title="央视",CCTV16
+http://192.168.60.1:7088/udp/239.81.1.17:4056
 #EXTINF:-1 tvg-id="17" tvg-name="CCTV17" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png" group-title="央视",CCTV17
 http://192.168.60.1:7088/udp/239.81.0.228:4056
-#EXTINF:-1 tvg-id="20" tvg-name="CGTN" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png" group-title="央视",CGTN
-http://192.168.60.1:7088/udp/239.81.0.28:4056
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="央视",CCTV中学生
 http://192.168.60.1:7088/udp/239.81.0.87:4056
 
@@ -70,10 +72,8 @@ http://192.168.60.1:7088/udp/239.81.0.114:4056
 http://192.168.60.1:7088/udp/239.81.0.93:4056
 #EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png" group-title="卫视",辽宁卫视
 http://192.168.60.1:7088/udp/239.81.0.210:4056
-#EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png" group-title="卫视",辽宁卫视
-http://192.168.60.1:7088/udp/239.81.0.35:4056
 #EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jilin.png" group-title="卫视",吉林卫视
-http://192.168.60.1:7088/udp/239.81.0.58:4056
+http://192.168.60.1:7088/udp/239.81.1.50:4056
 #EXTINF:-1 tvg-id="46" tvg-name="黑龙江卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png" group-title="卫视",黑龙江卫视
 http://192.168.60.1:7088/udp/239.81.0.105:4056
 #EXTINF:-1 tvg-id="52" tvg-name="内蒙古卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/neimeng.png" group-title="卫视",内蒙古卫视
