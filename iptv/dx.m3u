@@ -32,8 +32,6 @@ http://192.168.60.1:7088/udp/239.81.0.120:4056
 #EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png" group-title="央视",CCTV15
 http://192.168.60.1:7088/udp/239.81.0.230:4056
 #EXTINF:-1 tvg-id="16" tvg-name="CCTV16" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV156.png" group-title="央视",CCTV16
-http://192.168.60.1:7088/udp/239.81.0.142:4056
-#EXTINF:-1 tvg-id="16" tvg-name="CCTV16" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV156.png" group-title="央视",CCTV16
 http://192.168.60.1:7088/udp/239.81.1.17:4056
 #EXTINF:-1 tvg-id="17" tvg-name="CCTV17" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png" group-title="央视",CCTV17
 http://192.168.60.1:7088/udp/239.81.0.228:4056
