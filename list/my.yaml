@@ -39,3 +39,4 @@ payload:
   - DOMAIN-SUFFIX,mytvsuper.com
   - DOMAIN-SUFFIX,omtrdc.net
   - DOMAIN-SUFFIX,112114.xyz
+  - IP-CIDR,103.95.24.37,no-resolve
