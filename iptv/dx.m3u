@@ -37,12 +37,14 @@ http://192.168.60.1:7088/udp/239.81.0.142:4056
 http://192.168.60.1:7088/udp/239.81.1.17:4056
 #EXTINF:-1,tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://epg.v1.mk/logo/CCTV17.png" group-title="央视",CCTV17农业农村
 http://192.168.60.1:7088/udp/239.81.0.228:4056
-#EXTINF:-1,tvg-id="CCTV8k" tvg-name="CCTV17" tvg-logo="https://epg.v1.mk/logo/CCTV8k.png" group-title="央视",CCTV8k超高清
+#EXTINF:-1,tvg-id="CCTV8k" tvg-name="CCTV8k"tvg-logo="https://epg.v1.mk/logo/CCTV8k.png" group-title="央视",CCTV8k超高清
 http://27.222.3.214/liveali-tp4k.cctv.cn/live/4K36M/playlist.m3u8
 #EXTINF:-1 tvg-id="CCTV4K" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="IPv6央视",CCTV-4K 超高清
 http://liveop.cctv.cn/hls/4KHD/playlist.m3u8
 #EXTINF:-1 tvg-id="上海五星体育" tvg-name="上海五星体育" tvg-logo="https://live.fanmingming.com/tv/五星体育.png" group-title="IPv6",五星体育
 http://[2409:8087:5e08:24::15]:6610/000000001000/2000000002000000007/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000007&IASHttpSessionId=OTT19594820240419041339000523
+#EXTINF:-1 tvg-id="CCTV8K" tvg-name="CCTV8K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV8k.png" group-title="IPv6央视",CCTV-8k
+http://27.222.3.214/liveali-tp4k.cctv.cn/live/8K120M/playlist.m3u8
 #EXTINF:-1 tvg-id="111" tvg-name="凤凰中文" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/fenghuangzhongwen.png" group-title="IPv6卫视",鳳凰中文
 http://103.95.24.37:880/fhws.m3u8
 #EXTINF:-1 tvg-id="112" tvg-name="凤凰资讯" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/fenghuangzixun.png" group-title="IPv6卫视",鳳凰資訊
