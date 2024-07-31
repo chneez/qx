@@ -42,3 +42,4 @@ payload:
   - IP-CIDR,103.95.24.0/21,no-resolve
   - DOMAIN-SUFFIX,music.mefun.org
   - DOMAIN-SUFFIX,pornemby.com
+  - DOMAIN-SUFFIX,api.tmdb.org
