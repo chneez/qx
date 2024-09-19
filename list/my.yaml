@@ -45,4 +45,5 @@ payload:
   - DOMAIN-SUFFIX,api.tmdb.org
   - DOMAIN-SUFFIX,hdhive.online
   - DOMAIN-SUFFIX,subcc.sntp.uk
-  - DOMAIN-SUFFIX,www.very.readilets.com
+  - DOMAIN-SUFFIX,readilets.com
+  - DOMAIN-SUFFIX,hkdvb.com
