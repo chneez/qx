@@ -11,7 +11,7 @@ const auth = $request.headers["Authorization"];
 
 $.setjson(auth, 'woddev_auth')
 
-$.log(woddev_auth);
+$.log(auth);
   $.subt = '获取会话: 成功!'
 })()
   .catch((e) => {
