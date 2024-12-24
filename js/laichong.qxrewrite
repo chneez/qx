@@ -1,0 +1,2 @@
+^https:\/\/shop\.laichon\.com\/api\/v1\/member\/userinfo url script-request-header https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/LaiChong.js
+hostname = shop.laichon.com
