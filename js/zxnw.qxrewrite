@@ -1,2 +1,2 @@
-^https://w\.csgmall\.com\.cn/gateway url script-request-body your_script.js
+^https://w\.csgmall\.com\.cn/gateway url script-request-body https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw.js
 hostname = w.csgmall.com.cn
