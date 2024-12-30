@@ -5,7 +5,7 @@ const $ = new Env('woddev_auth')
   
 
 
-const auth = $request.headers['authorization'];
+const auth = $request.headers['Authorization'];
 
   //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
 
