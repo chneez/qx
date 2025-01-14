@@ -1,2 +1,3 @@
-^https:\/\/app75zmobma9691\.h5\.xiaoeknow\.com\/xe\.exam\.assemble\.question_list$ script-response-body https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/correct_answer_notify.js
+[rewrite_local]
+^https://app75zmobma9691\.h5\.xiaoeknow\.com/xe\.exam\.assemble\.question_list/1\.0\.0$ script-response-body https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/correct_answer_notify.js
 hostname = h5.xiaoeknow.com
