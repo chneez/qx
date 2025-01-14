@@ -16,12 +16,13 @@ let notificationContent = questions.map((q) => {
       .map((optionId) => {
         const option = q.option.find((opt) => opt.id === optionId);
         if (option) {
+          // 提取选项字母（A、B、C、D）
           const match = option.content.match(/<p>(.*?)<\/p>/);
-          return match ? match[1] : ""; // 提取选项内容
+          return match ? match[1].slice(0, 1) : ""; // 提取选项字母
         }
         return "";
       })
-      .join("、");
+      .join(""); // 拼接为ABC等
   } else if (q.type === 3) {
     // 判断题
     answer = q.correct_answer[0] === "1" ? "对" : "错";
