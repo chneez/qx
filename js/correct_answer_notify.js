@@ -1,4 +1,3 @@
-
 // 获取响应体
 let body = $response.body;
 let response = JSON.parse(body);
@@ -10,31 +9,26 @@ let notificationContent = questions.map((q) => {
   let answer = "";
 
   // 根据题目类型解析答案
-  if (q.type === 0) {
-    // 单选题
-    const correctOptions = q.correct_answer[0];
+  if (q.type === 0 || q.type === 1) {
+    // 单选题和多选题
+    const correctOptions = q.correct_answer.flat(); // 多选题支持多个答案
     answer = correctOptions
       .map((optionId) => {
         const option = q.option.find((opt) => opt.id === optionId);
-        return option ? option.content.match(/^[A-D]/)[0] : ""; // 提取选项的字母
+        if (option) {
+          const match = option.content.match(/<p>(.*?)<\/p>/);
+          return match ? match[1] : ""; // 提取选项内容
+        }
+        return "";
       })
-      .join("");
-  } else if (q.type === 1) {
-    // 多选题
-    const correctOptions = q.correct_answer[0];
-    answer = correctOptions
-      .map((optionId) => {
-        const option = q.option.find((opt) => opt.id === optionId);
-        return option ? option.content.match(/^[A-D]/)[0] : ""; // 提取选项的字母
-      })
-      .join("");
+      .join("、");
   } else if (q.type === 3) {
     // 判断题
-    answer = q.correct_answer === 1 ? "对" : "错";
+    answer = q.correct_answer[0] === "1" ? "对" : "错";
   }
 
-  return `${questionNumber}${answer}`;
-}).join("、");
+  return `第${questionNumber}题: ${answer}`;
+}).join("；"); // 使用分号分隔每题答案
 
 // 推送通知
 $notify("试题正确答案", "", notificationContent);
