@@ -18,4 +18,6 @@ payload:
   - DOMAIN-SUFFIX, pub3.emby.wtf
   - DOMAIN-SUFFIX, pub3.term.wtf
   - DOMAIN-SUFFIX, aca.misakaf.org
+  - DOMAIN-SUFFIX, emby.moe
+  - DOMAIN-SUFFIX, niceduck.lol
 
