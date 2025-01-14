@@ -12,13 +12,16 @@ let notificationContent = questions.map((q) => {
   if (q.type === 0 || q.type === 1) {
     // 单选题或多选题
     const correctOptions = q.correct_answer.flat(); // 处理多选答案
-    const letterMapping = ["A", "B", "C", "D"]; // 选项字母映射
+    const letterMapping = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // 支持更多选项，如A, B, C, D, E, F, G...
+
+    // 对于每个正确选项，找到它对应的字母
     answer = correctOptions
       .map((optionId) => {
         const index = q.option.findIndex((opt) => opt.id === optionId); // 找到选项索引
         return index >= 0 ? letterMapping[index] : ""; // 根据索引获取字母
       })
-      .join(""); // 合并多个答案
+      .join(""); // 合并多个答案，适应多选题
+
   } else if (q.type === 3) {
     // 判断题
     const correctAnswer = q.correct_answer.flat()[0]; // 获取判断题答案
