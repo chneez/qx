@@ -1,10 +1,11 @@
+// 005
 // 获取请求体和请求头
 const requestBody = $request?.body || "";
 const contentType = $request?.headers?.['Content-Type'] || '';
 
-// 打印请求体和请求头，用于调试
+// 打印请求体内容，用于调试
 console.log("请求头Content-Type:", contentType);
-console.log("请求体:", requestBody);
+console.log("请求体内容:", requestBody);
 
 // 尝试解析请求体为 JSON 对象
 let parsedRequestBody = {};
@@ -12,14 +13,15 @@ let parsedRequestBody = {};
 try {
   // 如果是 application/json 类型，尝试解析为 JSON
   if (contentType.includes('application/json')) {
-    parsedRequestBody = JSON.parse(requestBody);
+    // 去除多余的空格
+    const trimmedRequestBody = requestBody.trim();
+    parsedRequestBody = JSON.parse(trimmedRequestBody);
     console.log("请求体解析成功:", parsedRequestBody);  // 调试输出请求体
   } else {
-    // 如果不是 JSON 格式，打印提示信息
     console.log("请求体不是 JSON 格式，跳过解析");
   }
 } catch (error) {
-  console.log("请求体解析失败，可能是非JSON格式", error.message);
+  console.log("请求体解析失败，可能是非JSON格式:", error.message);
 }
 
 // 检查请求体是否为目标请求
