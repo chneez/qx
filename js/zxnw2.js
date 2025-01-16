@@ -1,69 +1,53 @@
-// 检查请求体是否为目标请求
-const requestBody = $request?.body || "";
-if (requestBody.includes('"method":"mdc.gx.knowledge.daily.moudle.get"')) {
-  console.log("匹配到目标请求体:", requestBody);
+// 检查响应体是否包含目标字段
+const responseBody = $response?.body || "{}";
+try {
+  const data = JSON.parse(responseBody);
 
-  try {
-    // 解析响应体
-    const responseBody = $response?.body || "{}";
-    const data = JSON.parse(responseBody);
-    console.log("解析后的响应数据:", data);
-
-    // 提取不同题型
-    const response = data.mdc_gx_knowledge_daily_moudle_get_response || {};
-    const multipleList = response.multipleList || [];
-    const singleList = response.singleList || [];
-    const trueFalseList = response.trueFalseList || [];
-
-    // 解析多选题答案
-    const multipleAnswers = multipleList.map((topic, index) =>
-      `多选题 ${index + 1} 的答案: ` +
-      (topic.itemList || [])
-        .filter(item => item?.isRight?.type === 1)
-        .map(item => item?.item || "未知")
-        .join(", ")
-    );
-
-    // 解析单选题答案
-    const singleAnswers = singleList.map((topic, index) =>
-      `单选题 ${index + 1} 的答案: ` +
-      (topic.itemList || [])
-        .filter(item => item?.isRight?.type === 1)
-        .map(item => item?.item || "未知")
-        .join(", ")
-    );
-
-    // 解析判断题答案
-    const trueFalseAnswers = trueFalseList.map((topic, index) =>
-      `判断题 ${index + 1} 的答案: ` +
-      (topic.itemList || [])
-        .filter(item => item?.isRight?.type === 1)
-        .map(item => item?.item || "未知")
-        .join(", ")
-    );
-
-    // 合并所有答案
-    const notificationContent = [
-      ...multipleAnswers,
-      ...singleAnswers,
-      ...trueFalseAnswers,
-    ].join("\n");
-
-    // 发送通知
-    if (notificationContent) {
-      $notify("正确答案", "提取成功", notificationContent);
-      console.log("答案通知内容:", notificationContent);
-    } else {
-      console.log("未找到正确答案");
-    }
-
-    $done({ body: responseBody });
-  } catch (error) {
-    console.error("解析响应体出错:", error.message);
-    $done({}); // 出现异常时返回原始响应
+  // 确认是否为目标响应
+  const response = data.mdc_gx_knowledge_daily_moudle_get_response;
+  if (!response) {
+    $done({ body: responseBody }); // 非目标响应，直接返回
+    return;
   }
-} else {
-  // 非目标请求，直接放行
-  console.log("非目标请求，直接放行");
-  $done({});
+
+  // 存储题目与答案信息
+  const results = [];
+
+  // 排序并处理题目
+  const processQuestions = (questionList, type) => {
+    // 按 sort 字段排序
+    questionList.sort((a, b) => a.sort - b.sort);
+    questionList.forEach((question, index) => {
+      const answers = (question.itemList || [])
+        .filter(item => item.isRight?.type === 1)
+        .map(item => item.item || "未知")
+        .join(", ");
+      results.push(
+        `【${type}】${index + 1}. ${question.title}\n答案: ${answers}`
+      );
+    });
+  };
+
+  // 处理多选题
+  processQuestions(response.multipleList || [], "多选题");
+
+  // 处理单选题
+  processQuestions(response.singleList || [], "单选题");
+
+  // 处理判断题
+  processQuestions(response.trueFalseList || [], "判断题");
+
+  // 拼接通知内容
+  const notificationContent = results.join("\n\n");
+
+  // 发送通知
+  if (notificationContent) {
+    $notify("题目解析结果", "成功提取以下内容", notificationContent);
+  }
+
+  // 返回原始响应体
+  $done({ body: responseBody });
+} catch (error) {
+  console.log("解析响应体出错:", error.message);
+  $done({ body: responseBody }); // 解析出错时返回原始响应体
 }
