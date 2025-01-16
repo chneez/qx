@@ -1,56 +1,36 @@
-// 007
-// 获取请求体和请求头
+// 008
 // 获取请求体和请求头
 const requestBody = $request?.body || "";
-const contentType = $request?.headers?.['Content-Type'] || '';
+console.log("原始请求体:", requestBody);
+console.log("请求体长度:", requestBody.length);
 
-
-// 尝试解析请求体为 JSON 对象
+// 解析请求体
 let parsedRequestBody = {};
-
 try {
-  // 如果是 application/json 类型，尝试解析为 JSON
-  if (contentType.includes('application/json')) {
-    // 去除多余的空格
-    const trimmedRequestBody = requestBody.trim();
-    parsedRequestBody = JSON.parse(trimmedRequestBody);
-    console.log("请求体解析成功:", parsedRequestBody);  // 调试输出请求体
-    
-    // 解析 biz_content 字段
-    if (parsedRequestBody.biz_content) {
-      try {
-        const bizContent = JSON.parse(parsedRequestBody.biz_content);
-        console.log("biz_content 解析成功:", bizContent);  // 打印 biz_content 解析后的内容
-      } catch (error) {
-        console.log("解析 biz_content 字段出错:", error.message);
-      }
-    }
+  if (requestBody.trim() !== "") {
+    parsedRequestBody = JSON.parse(requestBody);
+    console.log("请求体解析成功:", parsedRequestBody);
   } else {
-    console.log("请求体不是 JSON 格式，跳过解析");
+    console.log("请求体为空，跳过解析");
+    $done({});
+    return;
   }
 } catch (error) {
   console.log("请求体解析失败，可能是非JSON格式:", error.message);
+  $done({});
+  return;
 }
 
-// 检查请求体是否为目标请求
-try {
-  if (parsedRequestBody.method === "mdc.daily.moudle.get") {
-    console.log("匹配到目标请求体");
+// 检查是否匹配目标请求
+if (parsedRequestBody.method === "mdc.daily.moudle.get") {
+  console.log("匹配到目标请求体");
 
-    // 解析响应体
-    const responseBody = $response?.body || "{}";
-    let data;
+  // 解析响应体
+  const responseBody = $response?.body || "{}";
+  try {
+    const data = JSON.parse(responseBody);
+    console.log("响应体解析成功:", data);
 
-    try {
-      data = JSON.parse(responseBody);
-      console.log("响应体解析成功:", data);  // 调试输出响应体
-    } catch (error) {
-      console.log("响应体解析出错:", error.message);
-      $done({});  // 解析出错时返回原始响应
-      return;
-    }
-
-    // 提取题目信息
     const topics = data.mdc_daily_moudle_get_response?.topicList || [];
     if (topics.length === 0) {
       console.log("未找到题目信息");
@@ -58,7 +38,6 @@ try {
       return;
     }
 
-    // 提取正确答案
     const correctAnswers = topics.map((topic, index) =>
       `题目 ${index + 1} 的答案: ` +
       (topic.itemList || [])
@@ -67,10 +46,7 @@ try {
         .join(", ")
     );
 
-    // 拼接通知内容
     const notificationContent = correctAnswers.join("\n");
-
-    // 发送通知
     if (notificationContent) {
       $notify("正确答案", "提取成功", notificationContent);
       console.log("答案通知内容:", notificationContent);
@@ -78,15 +54,12 @@ try {
       console.log("未找到正确答案");
     }
 
-    // 返回原始响应体
     $done({ body: responseBody });
-
-  } else {
-    console.log("非目标请求，直接放行");
-    $done({}); // 原样返回响应体
+  } catch (error) {
+    console.log("响应体解析失败:", error.message);
+    $done({ body: responseBody });
   }
-} catch (error) {
-  console.log("请求处理过程中发生错误:", error.message);
-  $done({}); // 出现异常时返回原始响应
+} else {
+  console.log("非目标请求，直接放行");
+  $done({});
 }
-
