@@ -3,10 +3,22 @@
  */
 
 let body = $response.body; // 获取响应体
-let obj = JSON.parse(body); // 解析 JSON 数据
+let obj;
 
-// 检查数据是否包含有效内容
-if (obj.mdc_daily_moudle_get_response && obj.mdc_daily_moudle_get_response.topicList) {
+// 确保响应体是 JSON 格式
+try {
+    obj = JSON.parse(body);
+} catch (e) {
+    $done({}); // 如果解析失败，直接放行
+}
+
+// 检查是否为目标请求
+if (
+    obj &&
+    obj.method === "mdc.daily.moudle.get" && // 确认 method 是指定值
+    obj.mdc_daily_moudle_get_response && 
+    obj.mdc_daily_moudle_get_response.topicList
+) {
     let topics = obj.mdc_daily_moudle_get_response.topicList;
     let correctOptions = [];
 
@@ -27,5 +39,5 @@ if (obj.mdc_daily_moudle_get_response && obj.mdc_daily_moudle_get_response.topic
     }
 }
 
-// 返回原始响应体
-$done(body);
+// 对其他请求直接放行
+$done({});
