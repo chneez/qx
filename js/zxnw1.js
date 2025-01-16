@@ -1,8 +1,20 @@
-// 004
-// 检查请求体是否为目标请求
-const requestBody = $request?.body || {};  // 假设requestBody已经是对象
+// 获取请求体
+const requestBody = $request?.body || "";
 
-if (requestBody.method === "mdc.daily.moudle.get") {
+// 尝试解析请求体为对象
+let parsedRequestBody = {};
+
+try {
+  parsedRequestBody = JSON.parse(requestBody);
+} catch (error) {
+  console.log("请求体解析失败，可能是非JSON格式", error.message);
+}
+
+// 打印请求体的 method 字段
+console.log("非目标请求，直接放行", parsedRequestBody.method);
+
+// 检查请求体是否为目标请求
+if (parsedRequestBody.method === "mdc.daily.moudle.get") {
   console.log("匹配到目标请求体");
 
   try {
@@ -57,7 +69,6 @@ if (requestBody.method === "mdc.daily.moudle.get") {
   }
 
 } else {
-  // 非目标请求，直接放行
-  console.log("非目标请求，直接放行"，requestBody.method);
+  console.log("非目标请求，直接放行");
   $done({}); // 原样返回响应体
 }
