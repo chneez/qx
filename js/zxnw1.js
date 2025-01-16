@@ -1,17 +1,26 @@
-// 获取请求体
+// 获取请求体和请求头
 const requestBody = $request?.body || "";
+const contentType = $request?.headers?.['Content-Type'] || '';
 
-// 尝试解析请求体为对象
+// 打印请求体和请求头，用于调试
+console.log("请求头Content-Type:", contentType);
+console.log("请求体:", requestBody);
+
+// 尝试解析请求体为 JSON 对象
 let parsedRequestBody = {};
 
 try {
-  parsedRequestBody = JSON.parse(requestBody);
+  // 如果是 application/json 类型，尝试解析为 JSON
+  if (contentType.includes('application/json')) {
+    parsedRequestBody = JSON.parse(requestBody);
+    console.log("请求体解析成功:", parsedRequestBody);  // 调试输出请求体
+  } else {
+    // 如果不是 JSON 格式，打印提示信息
+    console.log("请求体不是 JSON 格式，跳过解析");
+  }
 } catch (error) {
   console.log("请求体解析失败，可能是非JSON格式", error.message);
 }
-
-// 打印请求体的 method 字段
-console.log("非目标请求，直接放行", parsedRequestBody.method);
 
 // 检查请求体是否为目标请求
 if (parsedRequestBody.method === "mdc.daily.moudle.get") {
