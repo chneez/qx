@@ -17,6 +17,12 @@ try {
     const trimmedRequestBody = requestBody.trim();
     parsedRequestBody = JSON.parse(trimmedRequestBody);
     console.log("请求体解析成功:", parsedRequestBody);  // 调试输出请求体
+    
+    // 解析 biz_content 字段
+    if (parsedRequestBody.biz_content) {
+      const bizContent = JSON.parse(parsedRequestBody.biz_content);
+      console.log("biz_content 解析成功:", bizContent);  // 打印 biz_content 解析后的内容
+    }
   } else {
     console.log("请求体不是 JSON 格式，跳过解析");
   }
@@ -81,5 +87,8 @@ if (parsedRequestBody.method === "mdc.daily.moudle.get") {
 
 } else {
   console.log("非目标请求，直接放行");
+  $done({}); // 原样返回响应体
+}
+
   $done({}); // 原样返回响应体
 }
