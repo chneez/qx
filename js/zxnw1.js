@@ -1,4 +1,4 @@
-// 005
+// 006
 // 获取请求体和请求头
 const requestBody = $request?.body || "";
 const contentType = $request?.headers?.['Content-Type'] || '';
