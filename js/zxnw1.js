@@ -10,8 +10,6 @@ if (typeof requestBody === "string" && requestBody.includes('"method":"mdc.daily
     const responseBody = $response?.body || "{}";
     const data = JSON.parse(responseBody);
 
-    // 确认响应数据结构
-    console.log("解析后的响应数据:", data);
 
     // 提取题目信息
     const topics = data.mdc_daily_moudle_get_response?.topicList || [];
@@ -31,7 +29,7 @@ if (typeof requestBody === "string" && requestBody.includes('"method":"mdc.daily
     );
 
     // 拼接通知内容
-    const notificationContent = correctAnswers.join("\n");
+    const notificationContent = correctAnswers.join("、");
 
     // 发送通知
     if (notificationContent) {
