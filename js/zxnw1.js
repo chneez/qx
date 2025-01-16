@@ -58,6 +58,6 @@ if (requestBody.method === "mdc.daily.moudle.get") {
 
 } else {
   // 非目标请求，直接放行
-  console.log("非目标请求，直接放行");
+  console.log("非目标请求，直接放行"，requestBody.method);
   $done({}); // 原样返回响应体
 }
