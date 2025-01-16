@@ -4,9 +4,6 @@
 const requestBody = $request?.body || "";
 const contentType = $request?.headers?.['Content-Type'] || '';
 
-// 打印请求体内容，用于调试
-console.log("请求头Content-Type:", contentType);
-console.log("请求体内容:", requestBody);
 
 // 尝试解析请求体为 JSON 对象
 let parsedRequestBody = {};
