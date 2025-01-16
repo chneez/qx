@@ -1,31 +1,17 @@
 // 001
-// 001
-// 001
+// 002
 // 检查请求体是否为目标请求
 const requestBody = $request?.body || "";
 
-try {
-  // 尝试解析请求体为 JSON 对象
-  const requestJson = JSON.parse(requestBody);
-  console.log("请求体解析成功:", requestJson);  // 调试输出请求体
+
 
   // 检查 "method" 字段是否匹配
-  if (requestJson.method === "mdc.daily.moudle.get") {
+  if (requestBody.method === "mdc.daily.moudle.get") {
     console.log("匹配到目标请求体");
-
+    
     // 解析响应体
     const responseBody = $response?.body || "{}";
-    let data;
-    
-    // 尝试解析响应体
-    try {
-      data = JSON.parse(responseBody);
-      console.log("响应体解析成功:", data);  // 调试输出响应体
-    } catch (error) {
-      console.log("响应体解析出错:", error.message);
-      $done({});  // 解析出错时返回原始响应
-      return;
-    }
+    const data = JSON.parse(responseBody);
 
     // 提取题目信息
     const topics = data.mdc_daily_moudle_get_response?.topicList || [];
@@ -63,7 +49,5 @@ try {
     $done({}); // 原样返回响应体
   }
 
-} catch (error) {
-  console.log("解析请求体出错:", error.message);
-  $done({}); // 出现异常时返回原始响应
-}
+
+
