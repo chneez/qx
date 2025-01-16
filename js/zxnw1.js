@@ -1,6 +1,9 @@
 // 检查请求体是否为目标请求
 const requestBody = $request?.body || "";
-if (requestBody.includes('"method":"mdc.daily.moudle.get"')) {
+
+
+
+if (typeof requestBody === "string" && requestBody.includes('"method":"mdc.daily.moudle.get"')) {
   console.log("匹配到目标请求体:", requestBody);
   try {
     // 解析响应体
