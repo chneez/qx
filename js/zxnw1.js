@@ -1,4 +1,5 @@
-// 006
+// 007
+// 获取请求体和请求头
 // 获取请求体和请求头
 const requestBody = $request?.body || "";
 const contentType = $request?.headers?.['Content-Type'] || '';
@@ -20,8 +21,12 @@ try {
     
     // 解析 biz_content 字段
     if (parsedRequestBody.biz_content) {
-      const bizContent = JSON.parse(parsedRequestBody.biz_content);
-      console.log("biz_content 解析成功:", bizContent);  // 打印 biz_content 解析后的内容
+      try {
+        const bizContent = JSON.parse(parsedRequestBody.biz_content);
+        console.log("biz_content 解析成功:", bizContent);  // 打印 biz_content 解析后的内容
+      } catch (error) {
+        console.log("解析 biz_content 字段出错:", error.message);
+      }
     }
   } else {
     console.log("请求体不是 JSON 格式，跳过解析");
@@ -31,15 +36,14 @@ try {
 }
 
 // 检查请求体是否为目标请求
-if (parsedRequestBody.method === "mdc.daily.moudle.get") {
-  console.log("匹配到目标请求体");
+try {
+  if (parsedRequestBody.method === "mdc.daily.moudle.get") {
+    console.log("匹配到目标请求体");
 
-  try {
     // 解析响应体
     const responseBody = $response?.body || "{}";
     let data;
 
-    // 如果响应体是字符串且需要解析为对象
     try {
       data = JSON.parse(responseBody);
       console.log("响应体解析成功:", data);  // 调试输出响应体
@@ -80,15 +84,12 @@ if (parsedRequestBody.method === "mdc.daily.moudle.get") {
     // 返回原始响应体
     $done({ body: responseBody });
 
-  } catch (error) {
-    console.log("解析请求体或响应体出错:", error.message);
-    $done({}); // 出现异常时返回原始响应
+  } else {
+    console.log("非目标请求，直接放行");
+    $done({}); // 原样返回响应体
   }
-
-} else {
-  console.log("非目标请求，直接放行");
-  $done({}); // 原样返回响应体
+} catch (error) {
+  console.log("请求处理过程中发生错误:", error.message);
+  $done({}); // 出现异常时返回原始响应
 }
 
-  $done({}); // 原样返回响应体
-}
