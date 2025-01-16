@@ -1,13 +1,13 @@
 // 检查请求体是否为目标请求
 const requestBody = $request?.body || "";
 if (requestBody.includes('"method":"mdc.daily.moudle.get"')) {
-  console.log("匹配到目标请求体:", requestBody);
+  console.log("匹配到目标请求体");
 
   try {
     // 解析响应体
     const responseBody = $response?.body || "{}";
     const data = JSON.parse(responseBody);
-    console.log("解析后的响应数据:", data);
+    console.log("解析后的响应数据:");
 
     // 提取题目信息
     const topics = data.mdc_daily_moudle_get_response?.topicList || [];
