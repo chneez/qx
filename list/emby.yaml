@@ -20,4 +20,5 @@ payload:
   - DOMAIN-SUFFIX, aca.misakaf.org
   - DOMAIN-SUFFIX, emby.moe
   - DOMAIN-SUFFIX, jcf.niceduck.lol
+  - DOMAIN-KEYWORD, niceduck
 
