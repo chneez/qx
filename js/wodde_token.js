@@ -19,15 +19,15 @@ const $ = new Env('woddev_auth');
     if (isChanged) {
       $.setjson(currentAuth, 'woddev_auth');
       $.msg($.name, '会话已更新', `检测到新凭证`, `更新好了`);
-     
     } else {
       $.log(`🔄 凭证未变化，跳过存储`);
     }
 
   } catch (e) {
-    $.msg($.name, '❌ 错误', e.message, { 'icon': 'xmark.octagon' });
+    if (e.message !== "Authorization 头缺失") {
+      $.msg($.name, '❌ 错误', e.message, '');
+    }
     $.log(`ERROR: ${e.stack || e}`);
-    
   } finally {
     // 4. 强制资源释放
     currentAuth = storedAuth = null; // 清除敏感数据
