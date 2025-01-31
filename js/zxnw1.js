@@ -21,7 +21,7 @@ try {
   );
 
   // 拼接通知内容
-  const notificationContent = correctAnswers.join("，");
+  const notificationContent = correctAnswers.join(",");
 
   // 发送通知
   if (notificationContent) {
