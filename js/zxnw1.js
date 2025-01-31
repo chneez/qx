@@ -17,7 +17,7 @@ try {
     (topic.itemList || [])
       .filter(item => item?.isRight?.type === 1)
       .map(item => item?.item || "未知")
-      .join(", ")
+      //.join(", ")
   );
 
   // 拼接通知内容
