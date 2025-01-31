@@ -13,7 +13,7 @@ try {
 
   // 提取正确答案
   const correctAnswers = topics.map((topic, index) =>
-    `题${index + 1}: ` +
+    `${index + 1}: ` +
     (topic.itemList || [])
       .filter(item => item?.isRight?.type === 1)
       .map(item => item?.item || "未知")
