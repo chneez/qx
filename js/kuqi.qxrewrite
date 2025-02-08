@@ -1,7 +1,5 @@
-
-
 [rewrite_local]
-^https:\/\/h5\.youzan\.com\/wscump\/checkin\/checkinV2\.json\?.*access_token=([^&]+) url script-request-header https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/kuqi_token.js
-
+//^https:\/\/h5\.youzan\.com\/wscump\/checkin\/checkinV2\.json\?.*access_token=([^&]+) url script-request-header https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/kuqi_token.js
+^https:\/\/h5\.youzan\.com\/wscuser\/weapp\/create-client\.json\?.*access_token=([^&]+) url script-request-header https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/kuqi_token.js
 [mitm]
 hostname = h5.youzan.com
