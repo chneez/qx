@@ -57,3 +57,4 @@ payload:
   - DOMAIN-SUFFIX,wiki.repcz.link
   - DOMAIN-SUFFIX,huggingface.co
   - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,x.ai
