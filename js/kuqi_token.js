@@ -6,7 +6,7 @@ let notificationMessage = "";
 
 // 获取完整请求头
 const headers = $request.headers;
-const oldHeaders = JSON.parse($prefs.valueForKey("allheaders")) || {}; // 从存储中读取旧头部
+const oldHeaders = JSON.parse($prefs.valueForKey("kqallheaders")) || {}; // 从存储中读取旧头部
 
 // 比较新旧请求头差异
 const changedHeaders = [];
@@ -19,7 +19,7 @@ for (const [key, value] of Object.entries(headers)) {
 
 // 存储所有请求头（包括未变化的）
 if (changedHeaders.length > 0 || Object.keys(headers).length === 0) { // 如果有变化或首次存储
-    $prefs.setValueForKey(JSON.stringify(headers), "allheaders");
+    $prefs.setValueForKey(JSON.stringify(headers), "kqallheaders");
     // 构建通知内容
     changedHeaders.forEach(([key, value]) => {
         notificationMessage += `更新 Header: ${key} → ${value}\n`;
