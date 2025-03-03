@@ -1,19 +1,18 @@
 
 
 
-const $ = new Env('xxqatoken')
+const $ = new Env('xxqa_session')
 
 !(async () => {
   $.log('', `🔔 ${$.name}, 获取会话: 开始!`, '')
   
+  // 获取 Cookie 和 token
+  const cookie = $request.headers["Cookie"]
+  const token = $request.headers["access-token"]
 
-
-const token = $request.headers["access-token"];
-
-  //$.log(`${$.name}`, `body: ${JSON.stringify($request.body)}`, '')
-
-$.setjson(token, 'xxqa_token')
-
+  // 存储数据
+  $.setjson(cookie, 'xxqa_cookie')
+  $.setjson(token, 'xxqa_token')
 
   $.subt = '获取会话: 成功!'
 })()
@@ -23,10 +22,10 @@ $.setjson(token, 'xxqa_token')
     $.log(`❌ ${$.name}, 获取会话: 失败! 原因: ${e}!`)
   })
   .finally(() => {
-    $.msg($.name, $.subt, $.desc), $.log('', `🔔 ${$.name}, 获取会话: 结束!`, ''), $.done()
+    $.msg($.name, $.subt, $.desc)
+    $.log('', `🔔 ${$.name}, 获取会话: 结束!`, '')
+    $.done()
   })
-
-
 
 
 
