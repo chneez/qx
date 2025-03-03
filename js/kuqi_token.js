@@ -1,47 +1,38 @@
-// 获取请求 URL
+// 获取请求 
 const url = $request.url;
 
 // 初始化通知内容
 let notificationMessage = "";
 
-// 解析 access_token
-const match = url.match(/access_token=([^&]+)/);
-if (match) {
-    const newToken = match[1];  // 提取新的 access_token
-    const oldToken = $prefs.valueForKey("kuqitoken");  // 获取存储中的旧 token
+// 获取完整请求头
+const headers = $request.headers;
+const oldHeaders = JSON.parse($prefs.valueForKey("allheaders")) || {}; // 从存储中读取旧头部
 
-    // 只有当 token 变化时才更新
-    if (newToken !== oldToken) {
-        // 更新存储的 access_token
-        $prefs.setValueForKey(newToken, "kuqitoken");
-        notificationMessage += `更新 access_token: ${newToken}\n`;
-    } else {
-        console.log("access_token 未变化，无需更新");
+// 比较新旧请求头差异
+const changedHeaders = [];
+for (const [key, value] of Object.entries(headers)) {
+    if (oldHeaders[key] !== value) {
+        changedHeaders.push([key, value]);
+        oldHeaders[key] = value; // 先临时记录新值
     }
 }
 
-// 获取请求头中的 extra-data
-const extraData = $request.headers['extra-data'];
-if (extraData) {
-    const oldExtraData = $prefs.valueForKey("extradata");  // 获取存储中的旧 extra-data
-
-    // 只有当 extra-data 变化时才更新
-    if (extraData !== oldExtraData) {
-        // 存储新的 extra-data
-        $prefs.setValueForKey(extraData, "extradata");
-        notificationMessage += `更新 extra-data: ${extraData}\n`;
-    } else {
-        console.log("extra-data 未变化，无需更新");
-    }
+// 存储所有请求头（包括未变化的）
+if (changedHeaders.length > 0 || Object.keys(headers).length === 0) { // 如果有变化或首次存储
+    $prefs.setValueForKey(JSON.stringify(headers), "allheaders");
+    // 构建通知内容
+    changedHeaders.forEach(([key, value]) => {
+        notificationMessage += `更新 Header: ${key} → ${value}\n`;
+    });
 } else {
-    console.log("请求头中没有 extra-data");
+    console.log("请求头未发生变化");
 }
 
-// 如果有更新，则发送通知
+// 如果有更新则发送通知
 if (notificationMessage) {
-    $notify("酷骑", "获取信息成功", notificationMessage.trim());
+    $notify("酷骑", "请求头更新检测", notificationMessage.trim());
 } else {
-    console.log("没有更新的信息");
+    console.log("无新请求头信息");
 }
 
-$done({});  // 释放资源
+$done({});
