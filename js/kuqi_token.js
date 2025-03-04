@@ -1,45 +1,58 @@
-// 获取请求
-const url = $request.url;
+let url = $request.url;
 
-// 初始化通知内容
-const notificationLines = [];
+// 只处理特定域名
+if (!url.includes("youzan.com")) {
+    $done({});
+}
 
-// 获取完整请求头
-const headers = $request.headers;
-const oldHeaders = JSON.parse($prefs.valueForKey("kuqiheaders") || "{}"); // 从存储中读取旧头部，默认空对象
-
-// 筛选必要的请求头（根据需求调整）
-const necessaryHeaders = {};
-const targetKeys = ["Authorization", "Cookie", "User-Agent"]; // 可根据需要修改
-for (const [key, value] of Object.entries(headers)) {
-    if (targetKeys.includes(key)) {
-        necessaryHeaders[key] = value;
+// 提取和更新 access_token
+let match = url.match(/access_token=([^&]+)/);
+if (match) {
+    let newToken = match[1];
+    let oldToken = $persistentStore.read("kuqitoken");
+    if (newToken !== oldToken) {
+        $persistentStore.write(newToken, "kuqitoken");
+        $notify("酷骑", "更新", "新 access_token: " + newToken);
+        console.log("🔹 新 access_token 已更新: " + newToken);
     }
 }
 
-// 比较新旧请求头差异
-const changedHeaders = [];
-for (const [key, value] of Object.entries(necessaryHeaders)) {
+// 处理请求头
+let headers = $request.headers;
+let oldHeaders = $persistentStore.read("kuqiheaders");
+if (oldHeaders) {
+    oldHeaders = JSON.parse(oldHeaders);
+} else {
+    oldHeaders = {};
+}
+
+let targetHeaders = ["Authorization", "Cookie", "User-Agent"];
+let newHeaders = {};
+let updates = [];
+
+for (let key of targetHeaders) {
+    if (headers[key]) {
+        newHeaders[key] = headers[key];
+    }
+}
+
+for (let [key, value] of Object.entries(newHeaders)) {
     if (oldHeaders[key] !== value) {
-        changedHeaders.push([key, value]);
-        oldHeaders[key] = value; // 更新旧头部记录
+        updates.push("更新 " + key + ": " + value);
+        oldHeaders[key] = value;
     }
 }
 
-// 存储请求头并发送通知
-const isFirstStore = !$prefs.valueForKey("kuqiheaders"); // 检查是否首次存储
-if (changedHeaders.length > 0 || isFirstStore) {
-    $prefs.setValueForKey(JSON.stringify(necessaryHeaders), "kuqiheaders");
-    changedHeaders.forEach(([key, value]) => {
-        notificationLines.push(`更新 Header: ${key} → ${value}`);
-    });
-    if (notificationLines.length > 0) {
-        $notify("酷骑", "请求头更新检测", notificationLines.join("\n"));
-    } else if (isFirstStore) {
-        $notify("酷骑", "首次存储", "已存储初始请求头");
+let isFirst = !$persistentStore.read("kuqiheaders");
+if (updates.length > 0 || isFirst) {
+    $persistentStore.write(JSON.stringify(newHeaders), "kuqiheaders");
+    if (updates.length > 0) {
+        $notify("酷骑", "请求头更新", updates.join("\n"));
+    } else if (isFirst) {
+        $notify("酷骑", "首次存储", "已保存请求头");
     }
 } else {
-    console.log(`请求头未发生变化 - URL: ${url}`);
+    console.log("无更新 - URL: " + url);
 }
 
 $done({});
