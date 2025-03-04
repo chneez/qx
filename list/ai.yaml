@@ -1,7 +1,7 @@
-rules:
-  # ChatGPT
-  - DOMAIN-KEYWORD,chatgpt-async-webps-prod-,AND,DOMAIN-SUFFIX,webpubsub.azure.com
-  - DOMAIN-KEYWORD,openaicom-api-,AND,DOMAIN-SUFFIX,azurefd.net
+payload:
+# ChatGPT
+  - AND,((DOMAIN-KEYWORD,chatgpt-async-webps-prod-),(DOMAIN-SUFFIX,webpubsub.azure.com))
+  - AND,((DOMAIN-KEYWORD,openaicom-api-),(DOMAIN-SUFFIX,azurefd.net))
   - DOMAIN,chatgpt.livekit.cloud
   - DOMAIN,host.livekit.cloud
   - DOMAIN,openai.com.cdn.cloudflare.net
@@ -16,14 +16,14 @@ rules:
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,sora.com
 
-  # Copilot
+# Copilot
   - DOMAIN,api.githubcopilot.com
   - DOMAIN,copilot-proxy.githubusercontent.com
   - DOMAIN,copilot.microsoft.com
   - DOMAIN,sydney.bing.com
   - DOMAIN,www.bing.com
 
-  # Gemini
+# Gemini
   - DOMAIN,ai.google.dev
   - DOMAIN,aida.googleapis.com
   - DOMAIN,aistudio.google.com
@@ -39,32 +39,32 @@ rules:
   - DOMAIN,makersuite.google.com
   - DOMAIN,proactivebackend-pa.googleapis.com
 
-  # Claude
+# Claude
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claudeusercontent.com
   - IP-CIDR,160.79.104.0/23,no-resolve
   - IP-CIDR6,2607:6bc0::/48,no-resolve
 
-  # JetBrains AI
+# JetBrains AI
   - DOMAIN-SUFFIX,grazie.ai
   - DOMAIN-SUFFIX,grazie.aws.intellij.net
   - DOMAIN-SUFFIX,jetbrains.ai
 
-  # Meta AI
+# Meta AI
   - DOMAIN,imagine.meta.com
   - DOMAIN-SUFFIX,meta.ai
 
-  # Perplexity
+# Perplexity
   - DOMAIN-SUFFIX,pplx.ai
   - DOMAIN-SUFFIX,perplexity.ai
   - DOMAIN-SUFFIX,perplexity.com
 
-  # Mistral AI
+# Mistral AI
   - DOMAIN,chat.mistral.ai
   - DOMAIN,console.mistral.ai
   - DOMAIN-SUFFIX,mistral.ai
 
-  # Grok AI
+# Grok AI
   - DOMAIN,api.x.ai
   - DOMAIN-SUFFIX,x.ai
