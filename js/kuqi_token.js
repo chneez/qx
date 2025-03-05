@@ -9,17 +9,17 @@ if (!url.includes("youzan.com")) {
 let match = url.match(/access_token=([^&]+)/);
 if (match) {
     let newToken = match[1];
-    let oldToken = $persistentStore.read("kuqitoken");
+    let oldToken = $prefs.valueForKey("kuqitoken");
     if (newToken !== oldToken) {
-        $persistentStore.write(newToken, "kuqitoken");
-        $notification.post("酷骑", "更新", "新 access_token: " + newToken);
+        $prefs.setValueForKey(newToken, "kuqitoken");
+        $notify("酷骑", "更新", "新 access_token: " + newToken);
         console.log("🔹 新 access_token 已更新: " + newToken);
     }
 }
 
 // 处理请求头
 let headers = $request.headers;
-let oldHeaders = $persistentStore.read("kuqiheaders");
+let oldHeaders = $prefs.valueForKey("kuqiheaders");
 if (oldHeaders) {
     oldHeaders = JSON.parse(oldHeaders);
 } else {
@@ -43,13 +43,13 @@ for (let [key, value] of Object.entries(newHeaders)) {
     }
 }
 
-let isFirst = !$persistentStore.read("kuqiheaders");
+let isFirst = !$prefs.valueForKey("kuqiheaders");
 if (updates.length > 0 || isFirst) {
-    $persistentStore.write(JSON.stringify(newHeaders), "kuqiheaders");
+    $prefs.setValueForKey(JSON.stringify(newHeaders), "kuqiheaders");
     if (updates.length > 0) {
-        $notification.post("酷骑", "请求头更新", updates.join("\n"));
+        $notify("酷骑", "请求头更新", updates.join("\n"));
     } else if (isFirst) {
-        $notification.post("酷骑", "首次存储", "已保存请求头");
+        $notify("酷骑", "首次存储", "已保存请求头");
     }
 } else {
     console.log("无更新 - URL: " + url);
