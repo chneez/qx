@@ -12,7 +12,7 @@ if (match) {
     let oldToken = $persistentStore.read("kuqitoken");
     if (newToken !== oldToken) {
         $persistentStore.write(newToken, "kuqitoken");
-        $notify("酷骑", "更新", "新 access_token: " + newToken);
+        $notification.post("酷骑", "更新", "新 access_token: " + newToken);
         console.log("🔹 新 access_token 已更新: " + newToken);
     }
 }
@@ -47,9 +47,9 @@ let isFirst = !$persistentStore.read("kuqiheaders");
 if (updates.length > 0 || isFirst) {
     $persistentStore.write(JSON.stringify(newHeaders), "kuqiheaders");
     if (updates.length > 0) {
-        $notify("酷骑", "请求头更新", updates.join("\n"));
+        $notification.post("酷骑", "请求头更新", updates.join("\n"));
     } else if (isFirst) {
-        $notify("酷骑", "首次存储", "已保存请求头");
+        $notification.post("酷骑", "首次存储", "已保存请求头");
     }
 } else {
     console.log("无更新 - URL: " + url);
