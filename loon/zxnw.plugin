@@ -5,7 +5,7 @@
 
 [Script]
 
-http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw1.js, requires-body=true, timeout=10, tag=zxnw
+http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/loon/zxnw.js, requires-body=true, timeout=10, tag=zxnw
 
 [MITM]
 hostname = w.csgmall.com.cn
