@@ -1,13 +1,13 @@
 
 
-#!name = zxnw
-#!desc = zxnw
+#!name = kuqi
+#!desc = kuqi
 #!date = 2024-10-25 15:16:38
 #!tsg = chen
 
 [Script]
 
-http-response ^https://h5\.youzan\.com/wscump/checkin/checkinV2\.json$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/kuqi_token.js, requires-body=true, timeout=10, tag=kuqi
+http-response ^https://h5\.youzan\.com/wscump/checkin/checkinV2\.json$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/loon/kuqi_token.js, requires-body=true, timeout=10, tag=kuqi
 
 [MITM]
 hostname = h5.youzan.com
