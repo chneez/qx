@@ -1,16 +1,11 @@
-if ($request.url.includes("https://h5.youzan.com/wscump/checkin/checkinV2.json")) {
-    console.log("匹配到签到请求，开始存储URL和Headers");
+#!name = zxnw
+#!desc = zxnw
+#!date = 2024-10-25 15:16:38
+#!tag = chen
 
-    $persistentStore.write($request.url, "kuqitoken");
-    console.log("已存储URL: " + $request.url);
+[Script]
 
-    const headers = JSON.stringify($request.headers);
-    $persistentStore.write(headers, "kuqiheaders");
-    console.log("已存储Headers: " + headers);
+http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/loon/zxnw.js, requires-body=true, timeout=10, tag=zxnw
 
-    $notification.post("签到脚本", "重写成功", "URL和Headers已存储");
-} else {
-    console.log("未匹配目标URL: " + $request.url);
-}
-
-$done();
+[MITM]
+hostname = w.csgmall.com.cn
