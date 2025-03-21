@@ -1,11 +1,13 @@
 #!name=莱充
 #!desc=莱充
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1004.png
 
+
+[Argument]
+CRONEXP = input, "0 0 * * *", tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
 [Script]
 http-request ^https:\/\/shop\.laichon\.com\/api\/v1\/member\/userinfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/LaiChong.js, timeout=60, tag=LaiChong
 
-cron 50 9 * * * script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/LaiChong.js, timeout=120, tag=莱充
+cron {CRONEXP} script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/LaiChong.js, timeout=120, tag=莱充
 
 [MITM]
 hostname = shop.laichon.com
