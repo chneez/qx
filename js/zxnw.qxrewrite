@@ -1,3 +1,6 @@
 [rewrite_local]
+# 请求阶段
+^https:\/\/w\.csgmall\.com\.cn\/gateway$ url script-request-body https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw3.js
+# 响应阶段
 ^https:\/\/w\.csgmall\.com\.cn\/gateway$ url script-response-body https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw3.js
 hostname = w.csgmall.com.cn
