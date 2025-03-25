@@ -1,94 +1,133 @@
-const url = $request.url;
-const method = $request.method;
-const headers = $request.headers;
-const body = $request.body;
-const responseBody = $response?.body || "{}";
+/**
+ * @name: zxnw3.js (适配 QX & Loon)
+ * @description: 自动重放请求 + 提取答案
+ * @author: chneez
+ * @version: 1.0.0
+ * @update: 2024-06-20
+ */
 
-// ========== 配置区（可扩展） ==========
 const API_CONFIG = {
   "https://w.csgmall.com.cn/gateway": {
-    // 需要重放的 method 及对应次数
     replayMethods: {
-      "mdc.member.other.get": 5,      // 重放 5 次
-      "mdc.reward.viewTimeRecord.add": 2, // 重放 2 次
-      "mdc.info.comment.add": 4,       // 重放 4 次
+      "mdc.member.other.get": 5,
+      "mdc.reward.viewTimeRecord.add": 3,
+      "mdc.info.comment.add": 2,
     },
-    // 需要提取答案的 method
-    extractMethods: ["mdc_daily_moudle_get_response"],
+    extractMethods: ["mdc.member.other.get"],
   },
-  // 可以添加更多 API 的处理规则
 };
 
-// ========== 核心逻辑 ==========
-function handleRequest() {
-  const apiConfig = API_CONFIG[url];
-  if (!apiConfig) {
-    $done({}); // 不匹配的 API 直接放行
-    return;
-  }
+// 判断当前运行环境 (QX / Loon)
+const ENV = (() => {
+  if (typeof $task !== "undefined") return "QX";
+  if (typeof $httpClient !== "undefined") return "Loon";
+  return "Unknown";
+})();
 
-  // 1. 检查是否需要重放请求
-  for (const [methodPattern, replayTimes] of Object.entries(apiConfig.replayMethods || {})) {
-    if (body?.includes(methodPattern)) {
-      replayRequest(replayTimes); // 按配置次数重放
-      break; // 匹配到就停止
-    }
-  }
+console.log(`✅ 当前运行环境: ${ENV}`);
 
-  // 2. 检查是否需要提取答案
-  const shouldExtract = apiConfig.extractMethods?.some((m) => responseBody?.includes(m));
-  if (shouldExtract) {
-    extractAnswers(responseBody);
-  }
+const url = $request?.url;
+const method = $request?.method;
+const headers = $request?.headers;
+const body = $request?.body;
+const responseBody = $response?.body;
 
-  // 3. 无论如何都放行原始请求
-  $done({});
-}
-
-// ========== 功能函数 ==========
-// 1. 重放请求（自定义次数，随机1-2秒间隔）
-function replayRequest(times) {
-  if (times <= 0) return;
-
-  const delay = Math.floor(Math.random() * 1000) + 1000; // 1-2秒随机延迟
-
-  setTimeout(() => {
+/**
+ * 重放请求 (适配 QX & Loon)
+ * @param {string} url - 请求URL
+ * @param {object} options - { method, headers, body }
+ * @param {function} callback - 回调函数
+ */
+function fetchRequest(url, options, callback) {
+  if (ENV === "QX") {
     $task.fetch({
       url: url,
-      method: method,
-      headers: headers,
-      body: body,
+      method: options.method || "POST",
+      headers: options.headers,
+      body: options.body,
     }).then(
-      (response) => console.log(`✅ 第 ${times} 次重放成功`),
-      (error) => console.log(`❌ 第 ${times} 次重放失败: ${error.error}`)
+      (response) => callback(null, response, response.body),
+      (error) => callback(error, null, null)
     );
+  } else if (ENV === "Loon") {
+    $httpClient.post(
+      { url, headers: options.headers, body: options.body },
+      (error, response, data) => callback(error, response, data)
+    );
+  } else {
+    console.log("❌ 未知环境，无法发送请求");
+  }
+}
 
-    replayRequest(times - 1); // 递归调用
+/**
+ * 递归重放请求
+ * @param {number} times - 剩余重放次数
+ */
+function replayRequest(times) {
+  console.log(`🔄 尝试重放，剩余次数=${times}`);
+  if (times <= 0) return;
+
+  const delay = Math.floor(Math.random() * 1000) + 1000;
+  setTimeout(() => {
+    fetchRequest(
+      url,
+      { method, headers, body },
+      (error, response, data) => {
+        if (error) {
+          console.log(`❌ 第 ${times} 次重放失败: ${error}`);
+        } else {
+          console.log(`✅ 第 ${times} 次重放成功`);
+        }
+        replayRequest(times - 1);
+      }
+    );
   }, delay);
 }
 
-// 2. 提取答案（你的逻辑）
-function extractAnswers(responseBody) {
+/**
+ * 提取答案并通知
+ * @param {string} data - 响应数据
+ */
+function extractAnswers(data) {
   try {
-    const data = JSON.parse(responseBody);
-    const topics = data.mdc_daily_moudle_get_response?.topicList || [];
-    if (topics.length === 0) return;
-
-    const correctAnswers = topics.map((topic, index) =>
-      `${index + 1}: ` +
-      (topic.itemList || [])
-        .filter((item) => item?.isRight?.type === 1)
-        .map((item) => item?.item || "未知")
-    );
-
-    const notificationContent = correctAnswers.join(",");
-    if (notificationContent) {
-      $notify("✅ 正确答案", "提取成功", notificationContent);
+    const jsonData = JSON.parse(data);
+    const answers = jsonData?.data?.answers || [];
+    console.log("📝 提取答案:", answers);
+    if (ENV === "QX") {
+      $notify("答案提取成功", "", answers.join(", "));
+    } else if (ENV === "Loon") {
+      $notification.post("答案提取成功", "", answers.join(", "));
     }
-  } catch (error) {
-    console.log("❌ 解析答案失败:", error);
+  } catch (e) {
+    console.log("❌ 解析答案失败:", e);
   }
 }
 
-// ========== 执行入口 ==========
-handleRequest();
+(function () {
+  if (!url || !body) {
+    console.log("❌ 请求数据不完整");
+    $done({});
+    return;
+  }
+
+  const apiConfig = API_CONFIG[url];
+  if (!apiConfig) {
+    $done({});
+    return;
+  }
+
+  // 检查是否需要重放请求
+  for (const [methodPattern, replayTimes] of Object.entries(apiConfig.replayMethods || {})) {
+    if (body.includes(methodPattern)) {
+      replayRequest(replayTimes);
+      break;
+    }
+  }
+
+  // 检查是否需要提取答案
+  if (apiConfig.extractMethods?.some((m) => responseBody?.includes(m))) {
+    extractAnswers(responseBody);
+  }
+
+  $done({});
+})();
