@@ -1,6 +1,11 @@
-[Script]
-http-request ^https:\/\/w\.csgmall\.com\.cn\/gateway script-path=zxnw3.js,requires-body=true
-http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway script-path=zxnw3.js,requires-body=true
 
-[Host]
-w.csgmall.com.cn
+ #!name = zxnw
+ #!desc = zxnw
+ #!date = 2024-10-25 15:16:38
+
+[Script]
+ //http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway$ script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/loon/zxnw.js, requires-body=true, timeout=10, tag=zxnw
+ http-request ^https:\/\/w\.csgmall\.com\.cn\/gateway script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw3.js,requires-body=true
+ http-response ^https:\/\/w\.csgmall\.com\.cn\/gateway script-path=https://raw.githubusercontent.com/chneez/qx/refs/heads/main/js/zxnw3.jsjs,requires-body=true
+ [MITM]
+ hostname = w.csgmall.com.cn
