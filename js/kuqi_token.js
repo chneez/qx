@@ -13,6 +13,7 @@ if ($request.url.includes("https://h5.youzan.com/wscump/checkin/checkinV2.json")
 
     // 通知用户
     $notify("签到脚本", "重写成功", "URL和Headers已存储");
+    $done();
 } else {
     console.log("未匹配目标URL: " + $request.url);
 }
