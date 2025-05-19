@@ -61,3 +61,5 @@ payload:
   - DOMAIN-SUFFIX,brew.sh
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-SUFFIX,md.doocs.org
+  - DOMAIN-SUFFIX,trae.ai
+  - DOMAIN-SUFFIX,trae-api-sg.mchost.guru
