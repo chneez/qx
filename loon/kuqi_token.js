@@ -28,4 +28,4 @@ if (url.includes("https://h5.youzan.com/wscump/checkin/checkinV2.json")) {
     console.log("未匹配目标URL: " + url);
 }
 
-$done();
+$done({});
