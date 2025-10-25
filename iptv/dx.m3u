@@ -45,6 +45,8 @@ http://[2409:8087:5e08:24::15]:6610/000000001000/2000000002000000007/index.m3u8?
 http://192.168.60.1:7088/udp/239.81.0.108:4056
 #EXTINF:-1,tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://epg.v1.mk/logo/湖南卫视.png" group-title="卫视",湖南卫视
 http://192.168.60.1:7088/udp/239.81.0.110:4056
+#EXTINF:-1,tvg-id="湖南卫视4K" tvg-name="湖南卫视4K" tvg-logo="https://epg.v1.mk/logo/湖南卫视4K.png" group-title="卫视",湖南卫视4k
+http://192.168.60.1:7088/udp/239.81.0.72:4056
 #EXTINF:-1,tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://epg.v1.mk/logo/东方卫视.png" group-title="卫视",东方卫视
 http://192.168.60.1:7088/udp/239.81.0.111:4056
 #EXTINF:-1,tvg-id="江苏卫视" tvg-name="江苏卫视" tvg-logo="https://epg.v1.mk/logo/江苏卫视.png" group-title="卫视",江苏卫视
