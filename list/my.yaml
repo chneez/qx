@@ -1,4 +1,7 @@
 payload:
+  - DOMAIN-SUFFIX,easebar.com 
+  - DOMAIN-SUFFIX,nieapps.com 
+  - DOMAIN-SUFFIX,netease.com
   - DOMAIN-SUFFIX,devv.ai
   - DOMAIN-SUFFIX,gamer.com.tw
   - DOMAIN-KEYWORD,bahamut
