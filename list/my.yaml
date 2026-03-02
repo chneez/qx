@@ -82,3 +82,5 @@ payload:
   - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,154.84.5.246
   - DOMAIN-SUFFIX,polymarket.com
+  - DOMAIN-SUFFIX,whos.tv
+  
