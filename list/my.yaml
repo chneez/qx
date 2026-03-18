@@ -1,4 +1,4 @@
-payload:
+1payload:
   - DOMAIN-SUFFIX,easebar.com 
   - DOMAIN-SUFFIX,nieapps.com 
   - DOMAIN-SUFFIX,netease.com
@@ -83,4 +83,5 @@ payload:
   - DOMAIN-SUFFIX,154.84.5.246
   - DOMAIN-SUFFIX,polymarket.com
   - DOMAIN-SUFFIX,whos.tv
+  - DOMAIN-SUFFIX,sooplive.co
   
