@@ -1,3 +1,4 @@
+rtsp://180.141.207.228/PLTV/88888888/224/3221225536/10000100000000060000000000081865_0.smil
 #EXTM3U x-tvg-url="https://epg.v1.mk/fy.xml"
 #EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视",CCTV1综合
 http://192.168.50.1:7088/udp/239.81.0.102:4056?fcc=180.141.207.228:8027
